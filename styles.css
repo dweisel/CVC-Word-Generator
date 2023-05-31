@@ -1,0 +1,26 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  margin-top: 20vh;
+}
+
+#wordContainer {
+  font-family: "Century Gothic", Arial;
+  font-size: 100px;
+  margin-bottom: 20px;
+}
+
+#wordContainer .vowel {
+  color: red;
+}
+
+#resetButton {
+  display: block;
+}

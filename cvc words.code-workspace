@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../tic tac toe"
+		},
+		{
+			"path": "../War Card Game"
+		}
+	],
+	"settings": {}
+}
