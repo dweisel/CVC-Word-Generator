@@ -1,3 +1,7 @@
-.vowel {
+.random-word {
+  font-size: 100px;
+}
+
+.random-word.vowel {
   color: red;
 }

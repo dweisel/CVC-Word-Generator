@@ -2,16 +2,19 @@ function getRandomWord() {
   const vowels = ['a', 'e', 'i', 'o', 'u'];
   const consonants = 'bcdfghjklmnpqrstvwxyz';
 
+  function getRandomElement(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
+
   let word = '';
-  word += consonants[Math.floor(Math.random() * consonants.length)];
-  word += vowels[Math.floor(Math.random() * vowels.length)];
-  word += consonants[Math.floor(Math.random() * consonants.length)];
+  word += getRandomElement(consonants);
+  word += '<span class="vowel">' + getRandomElement(vowels) + '</span>';
+  word += getRandomElement(consonants);
 
   return word;
 }
 
-const wordContainer = document.getElementById('wordContainer');
-const word = getRandomWord();
-const formattedWord = `<span class="vowel">${word[0]}</span>${word[1]}<span class="vowel">${word[2]}</span>`;
-wordContainer.innerHTML = formattedWord;
-
+function generateRandomWord() {
+  const randomWord = getRandomWord();
+  document.getElementById('random-word').innerHTML = randomWord;
+}
