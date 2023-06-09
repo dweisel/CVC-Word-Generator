@@ -1,7 +1,18 @@
-.random-word {
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+#random-word .vowel {
+  color: red;
+}
+
+#random-word {
   font-size: 100px;
 }
 
-.random-word.vowel {
-  color: red;
-}
