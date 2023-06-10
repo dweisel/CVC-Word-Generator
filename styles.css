@@ -1,18 +1,46 @@
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
   margin: 0;
   padding: 0;
 }
 
+header {
+  font-family: 'Andika', sans-serif;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  z-index: 1;
+}
+
+h1 {
+  margin: 0;
+}
+
+.container {
+  font-family: 'Andika', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 120px); /* Adjust the height value to leave space for header and padding */
+  padding-bottom: 20px; /* Adjust the padding value as needed */
+}
+
+.container span {
+  margin-top: 10px; /* Adjust the margin value as needed */
+  margin-bottom: 20px;
+}
+
+.container button {
+  margin-top: - 200px; /* Adjust the margin value to move the button closer to the word */
+}
+
 #random-word .vowel {
   color: red;
+  display: inline;
 }
 
 #random-word {
   font-size: 100px;
 }
-

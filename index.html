@@ -2,12 +2,21 @@
 <html>
 <head>
   <title>CVC Word Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Andika&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="styles.css">
   <script src="script.js"></script>
 </head>
+
 <body>
-  <h1>CVC Word Generator</h1>
-  <button onclick="generateRandomWord()">Generate CVC Word</button>
-  <p id="random-word"></p>
+  <header>
+    <h1>CVC Word Generator</h1>
+  </header>
+  <div class="container">
+    <span id="random-word"></span>
+    <button onclick="generateRandomWord()">Generate CVC Word</button>
+  </div>
 </body>
+
 </html>
