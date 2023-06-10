@@ -17,6 +17,7 @@ header {
   justify-content: center;
   height: calc(50vh - 70px); /* Adjust the height value to leave space for header and padding */
   padding-bottom: 5px; /* Adjust the padding value as needed */
+  text-align: center;
 }
 
 #random-word .vowel {
@@ -28,7 +29,8 @@ header {
   font-size: 100px;
 }
 
-.button {
-display: block;
-margin: auto;
+.d-flex.justify-content-center {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
 }
