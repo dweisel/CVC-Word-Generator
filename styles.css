@@ -32,8 +32,7 @@ header {
 .d-flex.justify-content-center {
   display: flex;
   justify-content: center;
-  gap: 10px; /* Add this line to create a horizontal spacing between the buttons */
-  margin-top: 10px; /* Add this line to create a vertical spacing between the buttons and the container */
+  gap: 50px; /* Add this line to create a horizontal spacing between the buttons */
 }
 
 .d-flex.justify-content-center button {
