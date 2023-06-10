@@ -27,3 +27,8 @@ const generateRandomWord = (isRightButton) => {
   console.log(`Right Button Click Count: ${rightButtonClickCount}`);
   console.log(`Wrong Button Click Count: ${wrongButtonClickCount}`);
 };
+
+// Generate and display a random word on page load
+window.addEventListener('DOMContentLoaded', () => {
+  generateRandomWord(false); // Pass false since it's not a button click
+});
