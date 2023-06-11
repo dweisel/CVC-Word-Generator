@@ -71,17 +71,15 @@
     function updateCounts() {
       const greenButtonCountElement = document.getElementById('green-button-count');
       const redButtonCountElement = document.getElementById('red-button-count');
-      greenButtonCountElement.textContent = `Green button clicked: ${greenButtonCount} times.`;
-      redButtonCountElement.textContent = `Red button clicked: ${redButtonCount} times.`;
+      greenButtonCountElement.textContent = `${greenButtonCount} words read correctly.`;
+      redButtonCountElement.textContent = `${redButtonCount} words read incorrectly`;
     }
 
     function checkWordCount() {
       if (generatedWords >= wordCount) {
-        document.getElementById('message').textContent = `Good Job! Green button clicked ${greenButtonCount} times. Red button clicked ${redButtonCount} times.`;
-        document.getElementById('message').style.display = 'block';
         const totalButtonClicks = greenButtonCount + redButtonCount;
         const greenPercentage = ((greenButtonCount / totalButtonClicks) * 100).toFixed(2);
-        document.getElementById('percentage').textContent = `Green button: ${greenPercentage}%`;
+        document.getElementById('percentage').textContent = `Word read correctly: ${greenPercentage}%`;
         document.getElementById('play-again-button').style.display = 'block';
 
         // Disable the buttons
