@@ -79,7 +79,7 @@
       if (generatedWords >= wordCount) {
         const totalButtonClicks = greenButtonCount + redButtonCount;
         const greenPercentage = ((greenButtonCount / totalButtonClicks) * 100).toFixed(2);
-        document.getElementById('percentage').textContent = `Word read correctly: ${greenPercentage}%`;
+        document.getElementById('percentage').textContent = `Words read correctly: ${greenPercentage}%`;
         document.getElementById('play-again-button').style.display = 'block';
 
         // Disable the buttons

@@ -44,6 +44,7 @@ h1 {
     
     .dropdown select {
       width: 200px;
+      text-align-last: center;  
     }
 
     .play-again-button {
