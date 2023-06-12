@@ -38,9 +38,14 @@ h1 {
     
     .dropdown {
       margin-top: 20px;
+      display: inline-block;
       font-family: 'Andika', sans-serif;
     }
     
+    .dropdown select {
+      width: 200px;
+    }
+
     .play-again-button {
       background-color: #0040ff;
       color: #ffffff;
