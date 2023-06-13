@@ -1,72 +1,72 @@
 h1 {
-  font-family: 'Andika', sans-serif;
+  font-family: 'Andika', sans-serif; /* Set the font family for the h1 heading */
 }
-    
-    #random-word {
-      font-family: 'Andika', sans-serif;
-      font-size: 100px;
-      color: black;
-    }
-    
-    .vowel {
-      color: red;
-      font-family: 'Andika', sans-serif;
-    }
-    
-    .container {
-      text-align: center;
-      margin-top: 50px;
-      font-family: 'Andika', sans-serif;
-    }
-    
-    .green-button {
-      background-color: #00ff00;
-      color: #ffffff;
-      font-size: 16pt;
-      width: 120px;
-      margin-right: 10px;
-      font-family: 'Andika', sans-serif;
-    }
 
-    .red-button {
-      background-color: #ff0000;
-      color: #ffffff;
-      font-size: 16pt;
-      width: 120px;
-      font-family: 'Andika', sans-serif;
-    }
-    
-    .dropdown {
-      margin-top: 25px;
-      display: inline-block;
-      font-family: 'Andika', sans-serif;
-    }
-    
-    .dropdown select {
-      width: 200px;
-      text-align-last: center;  
-    }
+#random-word {
+  font-family: 'Andika', sans-serif; /* Set the font family for the random word */
+  font-size: 100px; /* Set the font size for the random word */
+  color: black; /* Set the text color for the random word */
+}
 
-    .play-again-button {
-      background-color: #0040ff;
-      color: #ffffff;
-      font-size: 16pt;
-      padding: 10px 20px;
-      margin-top: 20px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      font-family: 'Andika', sans-serif;
-    }
+.vowel {
+  color: red; /* Set the text color for the vowel span element */
+  font-family: 'Andika', sans-serif; /* Set the font family for the vowel span element */
+}
 
-    .message {
-      display: none;
-      margin-top: 20px;
-      font-family: 'Andika', sans-serif;
-    }
+.container {
+  text-align: center; /* Center align the content inside the container */
+  margin-top: 25px; /* Set the top margin for the container */
+  font-family: 'Andika', sans-serif; /* Set the font family for the container */
+}
 
-    .percentage {
-      font-size: 20px;
-      margin-top: 10px;
-      font-family: 'Andika', sans-serif;
-    }
+.green-button {
+  background-color: #00ff00; /* Set the background color for the green button */
+  color: #ffffff; /* Set the text color for the green button */
+  font-size: 16pt; /* Set the font size for the green button */
+  width: 120px; /* Set the width of the green button */
+  margin-right: 10px; /* Set the right margin for the green button */
+  font-family: 'Andika', sans-serif; /* Set the font family for the green button */
+}
+
+.red-button {
+  background-color: #ff0000; /* Set the background color for the red button */
+  color: #ffffff; /* Set the text color for the red button */
+  font-size: 16pt; /* Set the font size for the red button */
+  width: 120px; /* Set the width of the red button */
+  font-family: 'Andika', sans-serif; /* Set the font family for the red button */
+}
+
+.dropdown {
+  margin-top: 25px; /* Set the top margin for the dropdown container */
+  display: inline-block; /* Display the dropdown as an inline block */
+  font-family: 'Andika', sans-serif; /* Set the font family for the dropdown */
+}
+
+.dropdown select {
+  width: 200px; /* Set the width of the dropdown select element */
+  text-align-last: center; /* Center align the text inside the dropdown select element */
+}
+
+.play-again-button {
+  background-color: #0040ff; /* Set the background color for the play again button */
+  color: #ffffff; /* Set the text color for the play again button */
+  font-size: 16pt; /* Set the font size for the play again button */
+  padding: 10px 20px; /* Set the padding for the play again button */
+  margin-top: 20px; /* Set the top margin for the play again button */
+  display: block; /* Display the play again button as a block element */
+  margin-left: auto; /* Set the left margin for the play again button */
+  margin-right: auto; /* Set the right margin for the play again button */
+  font-family: 'Andika', sans-serif; /* Set the font family for the play again button */
+}
+
+.message {
+  display: none; /* Hide the message element by default */
+  margin-top: 20px; /* Set the top margin for the message element */
+  font-family: 'Andika', sans-serif; /* Set the font family for the message element */
+}
+
+.percentage {
+  font-size: 20px; /* Set the font size for the percentage element */
+  margin-top: 10px; /* Set the top margin for the percentage element */
+  font-family: 'Andika', sans-serif; /* Set the font family for the percentage element */
+}
