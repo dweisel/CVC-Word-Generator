@@ -17,17 +17,23 @@ function getRandomElement(arr) {
 
 // Function to generate a random word
 function getRandomWord() {
-  const consonant1 = getRandomElement(consonants);
-  const consonant2 = getRandomElement(consonants);
-  const vowel = getRandomElement(vowels);
-  
-  return consonant1 + "<span class='vowel'>" + vowel + "</span>" + consonant2;
-}
+  let word = '';
 
-// Function to generate a random word and update the random word container
-function generateRandomWord() {
-  const randomWordContainer = document.getElementById('random-word');
-  randomWordContainer.innerHTML = getRandomWord();
+  // Generate a word with either two or three letters
+  if (Math.random() < 0.5) {
+    // Word with two letters
+    const consonant = getRandomElement(consonants);
+    const vowel = getRandomElement(vowels);
+    word = consonant + "<span class='vowel'>" + vowel + "</span>";
+  } else {
+    // Word with three letters
+    const consonant1 = getRandomElement(consonants);
+    const vowel = getRandomElement(vowels);
+    const consonant2 = getRandomElement(consonants);
+    word = consonant1 + "<span class='vowel'>" + vowel + "</span>" + consonant2;
+  }
+
+  return word;
 }
 
 // Event handler for the green button click
