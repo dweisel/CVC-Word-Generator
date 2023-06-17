@@ -1,8 +1,8 @@
 // Define an array of vowels
 const vowels = ['a', 'e', 'i', 'o', 'u'];
 
-// Define a string of consonants
-const consonants = 'bcdfghjklmnpqrstvwxyz';
+// Define a string of consonants (excluding 'x')
+const consonants = 'bcdfghjklmnpqrstvwyz';
 
 // Initialize variables to keep track of button clicks and word count
 let greenButtonCount = 0;
@@ -22,14 +22,22 @@ function getRandomWord() {
   // Generate a word with either two or three letters
   if (Math.random() < 0.5) {
     // Word with two letters
-    const consonant = getRandomElement(consonants);
+    let consonant = getRandomElement(consonants);
+    // Ensure the consonant is not 'x'
+    while (consonant === 'x') {
+      consonant = getRandomElement(consonants);
+    }
     const vowel = getRandomElement(vowels);
     word = consonant + "<span class='vowel'>" + vowel + "</span>";
   } else {
     // Word with three letters
-    const consonant1 = getRandomElement(consonants);
+    let consonant1 = getRandomElement(consonants);
+    // Ensure the consonant is not 'x'
+    while (consonant1 === 'x') {
+      consonant1 = getRandomElement(consonants);
+    }
     const vowel = getRandomElement(vowels);
-    const consonant2 = getRandomElement(consonants);
+    let consonant2 = getRandomElement(consonants);
     word = consonant1 + "<span class='vowel'>" + vowel + "</span>" + consonant2;
   }
 
