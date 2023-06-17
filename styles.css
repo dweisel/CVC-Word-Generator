@@ -1,5 +1,6 @@
 h1 {
   font-family: 'Andika', sans-serif; /* Set the font family for the h1 heading */
+  text-align: center;
 }
 
 #random-word {
@@ -38,7 +39,7 @@ h1 {
 
 .dropdown {
   margin-top: 25px; /* Set the top margin for the dropdown container */
-  display: inline-block; /* Display the dropdown as an inline block */
+  text-align: center;
   font-family: 'Andika', sans-serif; /* Set the font family for the dropdown */
 }
 
