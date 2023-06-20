@@ -33,6 +33,7 @@ h2 {
   font-size: 16pt; /* Set the font size for the green button */
   width: 120px; /* Set the width of the green button */
   margin-right: 10px; /* Set the right margin for the green button */
+  margin-bottom: 50px;
   font-family: 'Andika', sans-serif; /* Set the font family for the green button */
 }
 
@@ -41,6 +42,7 @@ h2 {
   color: #ffffff; /* Set the text color for the red button */
   font-size: 16pt; /* Set the font size for the red button */
   width: 120px; /* Set the width of the red button */
+  margin-bottom: 50px;
   font-family: 'Andika', sans-serif; /* Set the font family for the red button */
 }
 
