@@ -19,27 +19,15 @@ function getRandomElement(arr) {
 function getRandomWord() {
   let word = '';
 
-  // Generate a word with either two or three letters
-  if (Math.random() < 0.5) {
-    // Word with two letters
-    let consonant = getRandomElement(consonants);
-    // Ensure the consonant is not 'x'
-    while (consonant === 'x') {
-      consonant = getRandomElement(consonants);
-    }
-    const vowel = getRandomElement(vowels);
-    word = consonant + "<span class='vowel'>" + vowel + "</span>";
-  } else {
-    // Word with three letters
-    let consonant1 = getRandomElement(consonants);
-    // Ensure the consonant is not 'x'
-    while (consonant1 === 'x') {
-      consonant1 = getRandomElement(consonants);
-    }
-    const vowel = getRandomElement(vowels);
-    let consonant2 = getRandomElement(consonants);
-    word = consonant1 + "<span class='vowel'>" + vowel + "</span>" + consonant2;
+  // Generate a word with three letters
+  let consonant1 = getRandomElement(consonants);
+  // Ensure the consonant is not 'x'
+  while (consonant1 === 'x') {
+    consonant1 = getRandomElement(consonants);
   }
+  const vowel = getRandomElement(vowels);
+  let consonant2 = getRandomElement(consonants);
+  word = consonant1 + "<span class='vowel'>" + vowel + "</span>" + consonant2;
 
   return word;
 }
