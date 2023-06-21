@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Andika&display=swap" rel="stylesheet">
+  <script src="script.js"></script>
   <h1>CVC-E Word Generator</h1>
   <h2><a href="cvc.html"> CVC Words</a></h2>
 </head>
@@ -30,9 +31,9 @@
     <!-- Container for the buttons -->
     <div class="buttons-container">
       <!-- Green button -->
-      <button class="generate-button green-button" onclick="greenButtonClicked(); generateRandomWord()">✓</button>
+      <button class="generate-button green-button" onclick="greenButtonClicked(); generateRandomCVCEWord()">✓</button>
       <!-- Red button -->
-      <button class="generate-button red-button" onclick="redButtonClicked(); generateRandomWord()">X</button>
+      <button class="generate-button red-button" onclick="redButtonClicked(); generateRandomCVCEWord()">X</button>
     </div>
   
     <!-- Container to display the count of words read correctly -->
@@ -51,7 +52,5 @@
     <button class="play-again-button" onclick="playAgain()" id="play-again-button" style="display: none;">Reset</button>
   </div>
 
-  <!-- External JavaScript file -->
-  <script src="scripts-e.js"></script>
 </body>
 </html>

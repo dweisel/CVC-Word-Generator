@@ -1,25 +1,24 @@
 // Define an array of vowels
 const vowels = ['a', 'e', 'i', 'o', 'u'];
 
-// Define a string of consonants (excluding 'x')
-const consonants = 'bcdfghjklmnpqrstvwyz';
+// Define a string of consonants
+const consonants = 'bcdfghjklmnpqrstvwxyz';
 
 // Initialize variables to keep track of button clicks and word count
 let greenButtonCount = 0;
 let redButtonCount = 0;
 let wordCount = 10;
-let generatedWords = -1;
+let generatedWords = 0; // Updated to 0
 
 // Function to get a random element from an array
 function getRandomElement(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-// Function to generate a random word
-function getRandomWord() {
+// Function to generate a CVC word
+function getRandomCVCWord() {
   let word = '';
 
-  // Generate a word with three letters
   let consonant1 = getRandomElement(consonants);
   // Ensure the consonant is not 'x'
   while (consonant1 === 'x') {
@@ -28,6 +27,21 @@ function getRandomWord() {
   const vowel = getRandomElement(vowels);
   let consonant2 = getRandomElement(consonants);
   word = consonant1 + "<span class='vowel'>" + vowel + "</span>" + consonant2;
+
+  return word;
+}
+
+// Function to generate a random word
+function getRandomWord() {
+  let word = '';
+
+  // Generate a word with four letters
+  const consonant1 = getRandomElement(consonants);
+  const vowel = getRandomElement(vowels);
+  const consonant2 = getRandomElement(consonants);
+  const consonant3 = 'e';
+
+  word = consonant1 + "<span class='vowel'>" + vowel + "</span>" + consonant2 + consonant3;
 
   return word;
 }
@@ -48,22 +62,32 @@ function redButtonClicked() {
 function selectWordCount() {
   const selectElement = document.getElementById('word-count-select');
   wordCount = parseInt(selectElement.value);
-  generatedWords = -1;
+  generatedWords = 0; // Reset generatedWords to 0
   document.getElementById('message').style.display = 'none';
   document.getElementById('percentage').textContent = '';
   document.getElementById('play-again-button').style.display = 'none';
-  generateRandomWord();
+
+  if (location.pathname === '/three-letter-words.html') {
+    generateRandomCVCWord();
+  } else if (location.pathname === '/four-letter-words.html') {
+    generateRandomWord();
+  }
 }
 
 // Event handler for the play again button click
 function playAgain() {
   greenButtonCount = 0;
   redButtonCount = 0;
-  generatedWords = -1;
+  generatedWords = 0; // Reset generatedWords to 0
   document.getElementById('message').style.display = 'none';
   document.getElementById('percentage').textContent = '';
   document.getElementById('play-again-button').style.display = 'none';
-  generateRandomWord();
+
+  if (location.pathname === '/three-letter-words.html') {
+    generateRandomCVCWord();
+  } else if (location.pathname === '/four-letter-words.html') {
+    generateRandomWord();
+  }
 
   // Re-enable the buttons
   const greenButtons = document.getElementsByClassName('green-button');
@@ -120,6 +144,14 @@ function checkButtonClicks() {
   }
 }
 
+// Function to generate a random CVC word and check the word count
+function generateRandomCVCWord() {
+  generatedWords++;
+  const randomWordContainer = document.getElementById('random-word');
+  randomWordContainer.innerHTML = getRandomCVCWord();
+  checkWordCount();
+}
+
 // Function to generate a random word and check the word count
 function generateRandomWord() {
   generatedWords++;
@@ -129,4 +161,8 @@ function generateRandomWord() {
 }
 
 // Generate a random word when the page loads
-generateRandomWord();
+if (location.pathname === '/cvc.html' || location.pathname === '/three-letter-words.html') {
+  generateRandomCVCWord();
+} else if (location.pathname === '/cvc-e.html' || location.pathname === '/four-letter-words.html') {
+  generateRandomWord();
+}

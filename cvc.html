@@ -9,51 +9,46 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Andika&display=swap" rel="stylesheet">
   <h1>CVC Word Generator</h1>
-  <h2><a href="cvc-e.html"> CVC-E Words</a></h2>
-
+    <script src="script.js"></script>
+  <h2><a href="cvc-e.html">CVC-E Words</a></h2>
 </head>
 <body>
-
-        <!-- Dropdown for selecting the word count -->
-        <div class="dropdown">
-          <select id="word-count-select" onchange="selectWordCount()">
-            <option value="10">10 words</option>
-            <option value="50">50 words</option>
-            <option value="100">100 words</option>
-          </select>
-        </div>
+  <!-- Dropdown for selecting the word count -->
+  <div class="dropdown">
+    <select id="word-count-select" onchange="selectWordCount()">
+      <option value="10">10 words</option>
+      <option value="50">50 words</option>
+      <option value="100">100 words</option>
+    </select>
+  </div>
 
   <!-- Main container -->
   <div class="container">
     <!-- Container to display the randomly generated word -->
     <div id="random-word"></div>
-    
+
     <!-- Container for the buttons -->
     <div class="buttons-container">
       <!-- Green button -->
-      <button class="generate-button green-button" onclick="greenButtonClicked(); generateRandomWord()">✓</button>
+      <button class="generate-button green-button" onclick="greenButtonClicked(); generateRandomCVCWord()">✓</button>
       <!-- Red button -->
-      <button class="generate-button red-button" onclick="redButtonClicked(); generateRandomWord()">X</button>
+      <button class="generate-button red-button" onclick="redButtonClicked(); generateRandomCVCWord()">X</button>
     </div>
 
-  
     <!-- Container to display the count of words read correctly -->
     <div id="green-button-count"></div>
-    
+
     <!-- Container to display the count of words read incorrectly -->
     <div id="red-button-count"></div>
-    
+
     <!-- Container for displaying messages -->
     <div class="message" id="message"></div>
-    
+
     <!-- Container for displaying the percentage of words read correctly -->
     <div class="percentage" id="percentage"></div>
-    
+
     <!-- Button to play again and reset the game -->
     <button class="play-again-button" onclick="playAgain()" id="play-again-button" style="display: none;">Reset</button>
- 
   </div>
-  <!-- External JavaScript file -->
-  <script src="script.js"></script>
 </body>
 </html>
