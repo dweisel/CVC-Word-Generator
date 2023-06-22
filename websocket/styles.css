@@ -1,0 +1,82 @@
+h1 {
+  font-family: 'Andika', sans-serif; /* Set the font family for the h1 heading */
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Andika', sans-serif;
+  text-align: center;
+  font-size: medium;
+}
+
+#random-word {
+  font-family: 'Andika', sans-serif; /* Set the font family for the random word */
+  font-size: 100px; /* Set the font size for the random word */
+  color: black; /* Set the text color for the random word */
+  margin-bottom: 25px;
+}
+
+.vowel {
+  color: red; /* Set the text color for the vowel span element */
+  font-family: 'Andika', sans-serif; /* Set the font family for the vowel span element */
+}
+
+.container {
+  text-align: center; /* Center align the content inside the container */
+  margin-top: 5px; /* Set the top margin for the container */
+  font-family: 'Andika', sans-serif; /* Set the font family for the container */
+}
+
+.green-button {
+  background-color: green; /* Set the background color for the green button */
+  color: #ffffff; /* Set the text color for the green button */
+  font-size: 16pt; /* Set the font size for the green button */
+  width: 120px; /* Set the width of the green button */
+  margin-right: 10px; /* Set the right margin for the green button */
+  margin-bottom: 50px;
+  font-family: 'Andika', sans-serif; /* Set the font family for the green button */
+}
+
+.red-button {
+  background-color: red; /* Set the background color for the red button */
+  color: #ffffff; /* Set the text color for the red button */
+  font-size: 16pt; /* Set the font size for the red button */
+  width: 120px; /* Set the width of the red button */
+  margin-bottom: 50px;
+  font-family: 'Andika', sans-serif; /* Set the font family for the red button */
+}
+
+.dropdown {
+  margin-top: 25px; /* Set the top margin for the dropdown container */
+  text-align: center;
+  font-family: 'Andika', sans-serif; /* Set the font family for the dropdown */
+}
+
+.dropdown select {
+  width: 200px; /* Set the width of the dropdown select element */
+  text-align-last: center; /* Center align the text inside the dropdown select element */
+}
+
+.play-again-button {
+  background-color: #0040ff; /* Set the background color for the play again button */
+  color: #ffffff; /* Set the text color for the play again button */
+  font-size: 16pt; /* Set the font size for the play again button */
+  padding: 10px 20px; /* Set the padding for the play again button */
+  margin-top: 20px; /* Set the top margin for the play again button */
+  display: block; /* Display the play again button as a block element */
+  margin-left: auto; /* Set the left margin for the play again button */
+  margin-right: auto; /* Set the right margin for the play again button */
+  font-family: 'Andika', sans-serif; /* Set the font family for the play again button */
+}
+
+.message {
+  display: none; /* Hide the message element by default */
+  margin-top: 20px; /* Set the top margin for the message element */
+  font-family: 'Andika', sans-serif; /* Set the font family for the message element */
+}
+
+.percentage {
+  font-size: 20px; /* Set the font size for the percentage element */
+  margin-top: 10px; /* Set the top margin for the percentage element */
+  font-family: 'Andika', sans-serif; /* Set the font family for the percentage element */
+}

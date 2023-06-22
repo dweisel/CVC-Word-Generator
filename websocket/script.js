@@ -1,0 +1,191 @@
+// Define an array of vowels
+const vowels = ['a', 'e', 'i', 'o', 'u'];
+
+// Define a string of consonants
+const consonants = 'bcdfghjklmnpqrstvwxyz';
+
+// Initialize variables to keep track of button clicks and word count
+let greenButtonCount = 0;
+let redButtonCount = 0;
+let wordCount = 10;
+let generatedWords = 0; // Updated to 0
+
+// Function to get a random element from an array
+function getRandomElement(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+// Function to generate a CVC word
+function getRandomCVCWord() {
+  let word = '';
+
+  let consonant1 = getRandomElement(consonants);
+  // Ensure the consonant is not 'x'
+  while (consonant1 === 'x') {
+    consonant1 = getRandomElement(consonants);
+  }
+  const vowel = getRandomElement(vowels);
+  let consonant2 = getRandomElement(consonants);
+  word = consonant1 + "<span class='vowel'>" + vowel + "</span>" + consonant2;
+
+  return word;
+}
+
+// Function to generate a random word
+function getRandomWord() {
+  let word = '';
+
+  // Generate a word with four letters
+  const consonant1 = getRandomElement(consonants);
+  const vowel = getRandomElement(vowels);
+  const consonant2 = getRandomElement(consonants);
+  const consonant3 = 'e';
+
+  word = consonant1 + "<span class='vowel'>" + vowel + "</span>" + consonant2 + consonant3;
+
+  return word;
+}
+
+// Event handler for the green button click
+function greenButtonClicked() {
+  greenButtonCount++;
+  checkButtonClicks();
+}
+
+// Event handler for the red button click
+function redButtonClicked() {
+  redButtonCount++;
+  checkButtonClicks();
+}
+
+// Event handler for the word count dropdown selection change
+function selectWordCount() {
+  const selectElement = document.getElementById('word-count-select');
+  wordCount = parseInt(selectElement.value);
+  generatedWords = 0; // Reset generatedWords to 0
+  document.getElementById('message').style.display = 'none';
+  document.getElementById('percentage').textContent = '';
+  document.getElementById('play-again-button').style.display = 'none';
+
+  if (location.pathname === '/three-letter-words.html') {
+    generateRandomCVCWord();
+  } else if (location.pathname === '/four-letter-words.html') {
+    generateRandomWord();
+  }
+}
+
+// Event handler for the play again button click
+function playAgain() {
+  greenButtonCount = 0;
+  redButtonCount = 0;
+  generatedWords = 0; // Reset generatedWords to 0
+  document.getElementById('message').style.display = 'none';
+  document.getElementById('percentage').textContent = '';
+  document.getElementById('play-again-button').style.display = 'none';
+
+  if (location.pathname === '/three-letter-words.html') {
+    generateRandomCVCWord();
+  } else if (location.pathname === '/four-letter-words.html') {
+    generateRandomWord();
+  }
+
+  // Re-enable the buttons
+  const greenButtons = document.getElementsByClassName('green-button');
+  const redButtons = document.getElementsByClassName('red-button');
+
+  for (let i = 0; i < greenButtons.length; i++) {
+    greenButtons[i].disabled = false;
+  }
+
+  for (let i = 0; i < redButtons.length; i++) {
+    redButtons[i].disabled = false;
+  }
+
+  // Reset the green and red button counts
+  document.getElementById('green-button-count').textContent = '';
+  document.getElementById('red-button-count').textContent = '';
+}
+
+// Function to update the green and red button counts
+function updateCounts() {
+  const greenButtonCountElement = document.getElementById('green-button-count');
+  const redButtonCountElement = document.getElementById('red-button-count');
+  greenButtonCountElement.textContent = `${greenButtonCount} words read correctly.`;
+  redButtonCountElement.textContent = `${redButtonCount} words read incorrectly`;
+}
+
+// Function to check if the word count has been reached
+function checkWordCount() {
+  if (generatedWords >= wordCount) {
+    const totalButtonClicks = greenButtonCount + redButtonCount;
+    const greenPercentage = ((greenButtonCount / totalButtonClicks) * 100).toFixed(2);
+    document.getElementById('percentage').textContent = `Words read correctly: ${greenPercentage}%`;
+    document.getElementById('play-again-button').style.display = 'block';
+
+    // Disable the buttons
+    const greenButtons = document.getElementsByClassName('green-button');
+    const redButtons = document.getElementsByClassName('red-button');
+
+    for (let i = 0; i < greenButtons.length; i++) {
+      greenButtons[i].disabled = true;
+    }
+
+    for (let i = 0; i < redButtons.length; i++) {
+      redButtons[i].disabled = true;
+    }
+  }
+}
+
+// Function to check if the word count has been reached after each button click
+function checkButtonClicks() {
+  if (greenButtonCount + redButtonCount >= wordCount) {
+    updateCounts();
+    checkWordCount();
+  }
+}
+
+// Function to generate a random CVC word and check the word count
+function generateRandomCVCWord() {
+  generatedWords++;
+  const randomWordContainer = document.getElementById('random-word');
+  randomWordContainer.innerHTML = getRandomCVCWord();
+  checkWordCount();
+}
+
+// Function to generate a random word and check the word count
+function generateRandomWord() {
+  generatedWords++;
+  const randomWordContainer = document.getElementById('random-word');
+  randomWordContainer.innerHTML = getRandomWord();
+  checkWordCount();
+}
+
+// Establish a WebSocket connection
+const socket = new WebSocket('ws://localhost:5501');
+
+// Event handler for when the WebSocket connection is established
+socket.onopen = function() {
+  console.log('WebSocket connection established');
+};
+
+// Event handler for receiving messages from the server
+socket.onmessage = function(event) {
+  const data = JSON.parse(event.data);
+  const word = data.word;
+
+  // Update the UI with the received word
+  const randomWordContainer = document.getElementById('random-word');
+  randomWordContainer.innerHTML = word;
+};
+
+// Function to send a message to the server
+function sendMessage(message) {
+  socket.send(message);
+}
+
+// Generate a random word when the page loads
+if (location.pathname === '/cvc.html') {
+  generateRandomCVCWord();
+} else if (location.pathname === '/cvc-e.html') {
+  generateRandomWord();
+}
