@@ -160,9 +160,32 @@ function generateRandomWord() {
   checkWordCount();
 }
 
+// Establish a WebSocket connection
+const socket = new WebSocket('ws://localhost:5501');
+
+// Event handler for when the WebSocket connection is established
+socket.onopen = function() {
+  console.log('WebSocket connection established');
+};
+
+// Event handler for receiving messages from the server
+socket.onmessage = function(event) {
+  const data = JSON.parse(event.data);
+  const word = data.word;
+
+  // Update the UI with the received word
+  const randomWordContainer = document.getElementById('random-word');
+  randomWordContainer.innerHTML = word;
+};
+
+// Function to send a message to the server
+function sendMessage(message) {
+  socket.send(message);
+}
+
 // Generate a random word when the page loads
-if (location.pathname === '/cvc.html' || location.pathname === '/three-letter-words.html') {
+if (location.pathname === '/cvc.html') {
   generateRandomCVCWord();
-} else if (location.pathname === '/cvc-e.html' || location.pathname === '/four-letter-words.html') {
+} else if (location.pathname === '/cvc-e.html') {
   generateRandomWord();
 }
