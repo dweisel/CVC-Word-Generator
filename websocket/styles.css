@@ -58,7 +58,7 @@ h2 {
 }
 
 .play-again-button {
-  background-color: #0040ff; /* Set the background color for the play again button */
+  background-color: blue; /* Set the background color for the play again button */
   color: #ffffff; /* Set the text color for the play again button */
   font-size: 16pt; /* Set the font size for the play again button */
   padding: 10px 20px; /* Set the padding for the play again button */
