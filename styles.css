@@ -28,7 +28,7 @@ h2 {
 }
 
 .green-button {
-  background-color: green; /* Set the background color for the green button */
+  background-color: rgb(2, 255, 2); /* Set the background color for the green button */
   color: #ffffff; /* Set the text color for the green button */
   font-size: 16pt; /* Set the font size for the green button */
   width: 120px; /* Set the width of the green button */
