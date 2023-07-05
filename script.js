@@ -2,7 +2,7 @@
 const vowels = ['a', 'e', 'i', 'o', 'u'];
 
 // Define a string of consonants (excluding 'x')
-const consonants = 'bcdfghjklmnpqrstvwyz';
+const consonants = 'bcdfghjklmnpqrstvwxyz';
 
 // Initialize variables to keep track of button clicks and word count
 let greenButtonCount = 0;

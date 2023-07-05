@@ -21,6 +21,9 @@ function getRandomWord() {
 
   // Generate a word with four letters
   const consonant1 = getRandomElement(consonants);
+  while (consonant1 === 'x') {
+    consonant1 = getRandomElement(consonants);
+  }
   const vowel = getRandomElement(vowels);
   const consonant2 = getRandomElement(consonants);
   const consonant3 = 'e';
