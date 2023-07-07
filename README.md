@@ -1,1 +1,3 @@
 # CVC-Word-Generator
+
+This is an app designed to help build early-literacy skills. It's similar to flashcards, with the added feature of tracking the number of words a reader got right or wrong, which makes things easier for progress monitoring. CVC stands for consonant, vowel, consonant, and by reading CVC words emerging readers practice consonant and short-vowel sounds. There is a link to CVC-E words as well, which are consonant, vowel, consonant words, plus the letter "e". This makes the vowel sound long. Once emerging readers have a strong understanding of CVC and CVC-E words, they can apply that knowledge to reading longer, multi-syllabic words. 
